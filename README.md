@@ -1,6 +1,7 @@
 
-# Full-Stack-NodeJs-MongoDB-ReactJs-e-Native
-* Projeto criado com base no curso "Projeto Completo: XD, NodeJs, MongoDB, React Native e React" da plataforma Udemy, link abaixo:
+# Full-Stack NodeJs MongoDB ReactJs e Native
+* Projeto criado com base no curso "Projeto Completo: XD, NodeJs, MongoDB, React Native e React" da plataforma Udemy.
+Link do curso:
 https://www.udemy.com/course/projeto-completo-xd-nodejs-mongodb-react-native-e-react/
 
 
