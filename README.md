@@ -25,7 +25,7 @@ https://www.udemy.com/course/projeto-completo-xd-nodejs-mongodb-react-native-e-r
 ### Instalação
 1. Clone o repositório
 ```bash
-git clone https://github.com/murylocesar/Full-Stack-NodeJs-MongoDB-ReactJs-e-Native.git
+git clone https://github.com/murylocesar/Organizando-sua-vida.git
 ```
 
 2. Instale as dependências
