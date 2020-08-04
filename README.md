@@ -15,7 +15,7 @@ https://www.udemy.com/course/projeto-completo-xd-nodejs-mongodb-react-native-e-r
 
 ## Status do Projeto
 
-- [ ] Criação Backend e API com NodeJS
+- [x] Criação Backend e API com NodeJS
 - [x] Criação de Protótipos Web
 - [ ] Criação Web com ReactJs
 - [ ] Criação de Protótipos Mobile 
