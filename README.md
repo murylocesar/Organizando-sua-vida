@@ -12,6 +12,7 @@
 * Mobile com React Native
 
 <br>
+
 ## Status do Projeto
 
 - [x] Criação Backend e API com NodeJS
