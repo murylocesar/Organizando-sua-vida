@@ -32,11 +32,11 @@ class TaskController {
     async update(req, res) {
 
         await TaskModel.findByIdAndUpdate({
-                '_id': req.params.id
-            },
+            '_id': req.params.id
+        },
             req.body, {
-                new: true
-            }).then(response => {
+            new: true
+        }).then(response => {
             return res.status(200).json(response);
         }).catch(error => {
             return res.status(500).json(error)
@@ -45,10 +45,10 @@ class TaskController {
     }
     async all(req, res) {
         await TaskModel.find({
-                macaddress: {
-                    '$in': req.params.macaddress
-                }
-            })
+            macaddress: {
+                '$in': req.params.macaddress
+            }
+        })
             .sort('when')
             .then(response => {
                 return res.status(200).json(response);
@@ -72,8 +72,8 @@ class TaskController {
     }
     async delete(req, res) {
         await TaskModel.deleteOne({
-                '_id': req.params.id
-            })
+            '_id': req.params.id
+        })
             .then(response => {
                 return res.status(200).json(response);
             }).catch(error => {
@@ -98,13 +98,13 @@ class TaskController {
     async late(req, res) {
 
         await TaskModel.find({
-                'when': {
-                    '$lt': current
-                },
-                'macaddress': {
-                    '$in': req.params.macaddress
-                }
-            }).sort('when')
+            'when': {
+                '$lt': current
+            },
+            'macaddress': {
+                '$in': req.params.macaddress
+            }
+        }).sort('when')
             .then(response => {
                 return res.status(200).json(response);
             })
@@ -116,14 +116,14 @@ class TaskController {
     async today(req, res) {
 
         await TaskModel.find({
-                'macaddress': {
-                    '$in': req.params.macaddress
-                },
-                'when': {
-                    '$gte': startOfDay(current),
-                    '$lt': endOfDay(current)
-                }
-            }).sort('when')
+            'macaddress': {
+                '$in': req.params.macaddress
+            },
+            'when': {
+                '$gte': startOfDay(current),
+                '$lt': endOfDay(current)
+            }
+        }).sort('when')
             .then(response => {
                 return res.status(200).json(response);
             })
@@ -135,14 +135,14 @@ class TaskController {
     async week(req, res) {
 
         await TaskModel.find({
-                'macaddress': {
-                    '$in': req.params.macaddress
-                },
-                'when': {
-                    '$gte': startOfWeek(current),
-                    '$lt': endOfWeek(current)
-                }
-            }).sort('when')
+            'macaddress': {
+                '$in': req.params.macaddress
+            },
+            'when': {
+                '$gte': startOfWeek(current),
+                '$lt': endOfWeek(current)
+            }
+        }).sort('when')
             .then(response => {
                 return res.status(200).json(response);
             })
@@ -154,14 +154,14 @@ class TaskController {
     async month(req, res) {
 
         await TaskModel.find({
-                'macaddress': {
-                    '$in': req.params.macaddress
-                },
-                'when': {
-                    '$gte': startOfMonth(current),
-                    '$lt': endOfMonth(current)
-                }
-            }).sort('when')
+            'macaddress': {
+                '$in': req.params.macaddress
+            },
+            'when': {
+                '$gte': startOfMonth(current),
+                '$lt': endOfMonth(current)
+            }
+        }).sort('when')
             .then(response => {
                 return res.status(200).json(response);
             })
@@ -173,14 +173,14 @@ class TaskController {
     async year(req, res) {
 
         await TaskModel.find({
-                'macaddress': {
-                    '$in': req.params.macaddress
-                },
-                'when': {
-                    '$gte': startOfYear(current),
-                    '$lt': endOfYear(current)
-                }
-            }).sort('when')
+            'macaddress': {
+                '$in': req.params.macaddress
+            },
+            'when': {
+                '$gte': startOfYear(current),
+                '$lt': endOfYear(current)
+            }
+        }).sort('when')
             .then(response => {
                 return res.status(200).json(response);
             })

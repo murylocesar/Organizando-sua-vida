@@ -1,5 +1,5 @@
+#Backend
 Backend/node_modules
-Backend/.env
+web/node_modules
 
-Web
-App
+.gitignore
