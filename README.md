@@ -13,7 +13,8 @@
 
 <br>
 
-## Status do Projeto
+## Status do Projeto: Em desenvolvimento :warning:
+<!--Status do Projeto: Concluído :heavy_check_mark:-->
 
 - [x] Criação Backend e API com NodeJS
 - [x] Criação de Protótipos Web
