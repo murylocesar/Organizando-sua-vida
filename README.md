@@ -18,23 +18,24 @@
 - [x] Criação Backend e API com NodeJS
 - [x] Criação de Protótipos Web
 - [X] Criação Web com ReactJs
-- [ ] Criação de Protótipos Mobile 
+- [X] Criação de Protótipos Mobile 
 - [ ] Criação Mobile com React Native
 
 <br>
 
-## Instalação
-1. Clone o repositório
+## Clone o repositório
 ```bash
 git clone https://github.com/murylocesar/Organizando-sua-vida.git
 ```
+<br>
 
-2. Instale as dependências
+## Execução do Back-end e Front-end 
+1. Instale as dependências do back-end e Front-end
 ```bash
 npm install
 ```
 
-3. Inicie a aplicação
+2. Inicie a aplicação ( Execute as duas em paralelo )
 ```bash
 npm start
 ```
