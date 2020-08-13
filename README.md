@@ -32,48 +32,61 @@
 2. Front-end (pasta Frontend)
 3. Mobile (pasta mobile)
 
-💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
+
 <br>
+
 ## Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:  <a href="https://git-scm.com/">Git<a>, <a href="https://nodejs.org/en/">Node.js</a>. Além disto é bom ter um editor para trabalhar com o código como <a href="https://code.visualstudio.com/">VSCode</a>
 
 
 
 
-## No terminal, clone o repositório
+### No terminal, clone o repositório
 ```bash
 git clone https://github.com/murylocesar/Organizando-sua-vida.git
 ```
 
-## Entre na pasta do projeto:
+### Entre na pasta do projeto:
 ``` 
 cd Organizando-sua-vida
 ```
 
-## Execução do Back-end
-### Entre na pasta do backend:
+### Execução do Back-end
+#### Entre na pasta do backend:
 ``` 
 cd Backend
 ```
-### Instale as dependecias do backend
+#### Instale as dependecias do backend
 ```bash
 
 npm install
 ```
+#### Execute a aplicação
+```bash
+
+npm start
+```
 
 ## Execução do Front-end
-### Na raiz do projeto Entre na pasta do Frontend:
+#### Na raiz do projeto Entre na pasta do Frontend:
 ``` 
 cd ..
 ```
 ``` 
 cd Frontend
 ```
-### Instale as dependecias do Frontend
+#### Instale as dependecias do Frontend
 ```bash
 
 npm install
 ```
+#### Execute a aplicação
+```bash
+
+npm start
+```
+
+💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
 
 ## Utilitários
 - Protótipo: <a href="https://www.adobe.com/br/creativecloud.html?gclid=CjwKCAjwps75BRAcEiwAEiACMQaNyTkTu99zKKQsO2C1FGLsn74GYz3Ax446ScbB77QeeqST0WHu8RoC-f8QAvD_BwE&sdid=KQPOT&mv=search&ef_id=CjwKCAjwps75BRAcEiwAEiACMQaNyTkTu99zKKQsO2C1FGLsn74GYz3Ax446ScbB77QeeqST0WHu8RoC-f8QAvD_BwE:G:s&s_kwcid=AL!3085!3!301784432805!b!!g!!adobe!188193222!10039592982">Adobe XP</a>
