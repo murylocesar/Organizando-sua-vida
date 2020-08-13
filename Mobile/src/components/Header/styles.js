@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
     },
     notificationImage: {
-        marginTop:20,
+        marginTop: 20,
         width: 25,
         height: 35
     },
@@ -34,7 +34,9 @@ const styles = StyleSheet.create({
         width: 20
 
     },
-
+    notificationText: {
+        color: '#EE6B26'
+    },
     leftIcon: {
         position: 'absolute',
         left: 20,
