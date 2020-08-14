@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 import styles from './styles';
 
 // componentes
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import TaskCard from '../../components/TaskCard';
 
 
 export default function Home() {
@@ -64,12 +65,29 @@ export default function Home() {
                             styles.filterTextInative
                     }>Ano</Text>
                 </TouchableOpacity>
-
+            </View>
+            <View style={styles.title}>
+                <Text style={styles.titleText}>TAREFAS</Text>
             </View>
 
-            <Footer
-                icon={'add'}
-            />
-        </View >
+            <ScrollView style={styles.content} contentContainerStyle={{ alignItems: 'center' }}>
+                    <TaskCard done={false} />
+                    <TaskCard done={false} />
+                    <TaskCard done={false} />
+                    <TaskCard done={false} />
+                    <TaskCard done={false} />
+                    <TaskCard done={false} />
+                    <TaskCard done={false} />
+                    <TaskCard done={false} />
+                    <TaskCard done={true} />
+                    <TaskCard done={true} />
+                    <TaskCard done={true} />
+                    <TaskCard done={true} />
+                </ScrollView>
+
+                <Footer
+                    icon={'add'}
+                />
+            </View >
     )
 }

@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 10,
         borderBottomColor: '#EE6B26',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     logo: {
         width: 120,
