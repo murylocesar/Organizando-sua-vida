@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingLeft: 10,
         paddingRight: 28,
+        marginBottom: 50
 
     },
     inputInLine: {

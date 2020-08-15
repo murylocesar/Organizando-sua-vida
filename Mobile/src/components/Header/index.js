@@ -12,13 +12,16 @@ import api from '../../services/api';
 import isConnected from '../../utils/isConnected';
 
 
-export default function Header({ showNotification, showBack, clickNotification, pressNotification,late }) {
+export default function Header({ showNotification, showBack, clickNotification, pressNotification, late, navigation }) {
+    function Back() {
+        navigation.navigate('Home');
+    }
 
     return (
         <View style={styles.header}>
 
 
-            <TouchableOpacity style={styles.leftIcon}>
+            <TouchableOpacity style={styles.leftIcon} onPress={Back}>
                 {showBack ?
                     <Image source={qrcode} style={styles.leftIconImage} />
                     :
