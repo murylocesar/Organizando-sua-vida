@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './src/views/Home'
+import Home from './src/views/Task'
 
 console.disableYellowBox = true;
 
