@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 
 import styles from './styles';
 
@@ -8,10 +8,25 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import TaskCard from '../../components/TaskCard';
 
+import api from '../../services/api';
 
 export default function Home() {
 
     const [filter, setFilter] = useState('today');
+    const [task, setTask] = useState([]);
+    const [load, setLoad] = useState(false);
+
+    async function loadTask() {
+        setLoad(true);
+
+        await api.get(`/task/filter/${filter}/00:00:00:00:00:01`).then(response => {
+            setTask(response.data)
+            setLoad(false);
+        });
+    }
+    useEffect(() => {
+        loadTask();
+    }, [filter])
 
     return (
 
@@ -45,7 +60,7 @@ export default function Home() {
                             styles.filterTextActived
                             :
                             styles.filterTextInative
-                    }>Hoje</Text>
+                    }>Semana</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => setFilter('week')}>
@@ -54,7 +69,7 @@ export default function Home() {
                             styles.filterTextActived
                             :
                             styles.filterTextInative
-                    }>Semana</Text>
+                    }>Mês</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => setFilter('year')}>
@@ -71,7 +86,17 @@ export default function Home() {
             </View>
 
             <ScrollView style={styles.content} contentContainerStyle={{ alignItems: 'center' }}>
-                <TaskCard done={false} />
+
+                {
+                    load ?
+                        <ActivityIndicator color={'#EE6b26'} size={50} />
+                        :
+                        task.map(t =>
+                            (
+                                < TaskCard done={false} title={t.title} when={t.when} />
+                            ))
+                }
+
             </ScrollView>
 
             <Footer
