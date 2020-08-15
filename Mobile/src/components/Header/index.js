@@ -8,14 +8,18 @@ import bell from '../../assets/bell.png';
 import back from '../../assets/back.png';
 import qrcode from '../../assets/qrcode.png';
 
+import api from '../../services/api';
+import isConnected from '../../utils/isConnected';
 
-export default function Header({ showNotification, showBack }) {
+
+export default function Header({ showNotification, showBack, clickNotification, pressNotification,late }) {
+
     return (
         <View style={styles.header}>
 
 
             <TouchableOpacity style={styles.leftIcon}>
-                {showBack  ?
+                {showBack ?
                     <Image source={qrcode} style={styles.leftIconImage} />
                     :
                     <Image source={back} style={styles.leftIconImage} />
@@ -24,11 +28,14 @@ export default function Header({ showNotification, showBack }) {
 
             <Image source={logo} style={styles.logo} />
 
-            {showNotification &&
-                <TouchableOpacity style={styles.notification}>
+
+
+            {late &&
+                showNotification &&
+                <TouchableOpacity style={styles.notification} onPress={pressNotification}>
                     <Image source={bell} style={styles.notificationImage} />
                     <View style={styles.circle}>
-                        <Text style={styles.notificationText}>3</Text>
+                        <Text style={styles.notificationText}>{late}</Text>
                     </View>
                 </TouchableOpacity>
             }
