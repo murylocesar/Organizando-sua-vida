@@ -93,7 +93,7 @@ export default function Home() {
                         :
                         task.map(t =>
                             (
-                                < TaskCard done={false} title={t.title} when={t.when} />
+                                < TaskCard done={false} title={t.title} when={t.when} type={t.type} />
                             ))
                 }
 
