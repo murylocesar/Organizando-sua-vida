@@ -37,6 +37,7 @@ function Task({ match }) {
         await api.get(`/task/${match.params.id}`).then(response => {
 
             setType(response.data.type);
+            setDone(response.data.done);
             setTitle(response.data.title);
             setDescription(response.data.description);
             setDate(format(new Date(response.data.when), 'yyyy-MM-dd'));
@@ -55,6 +56,7 @@ function Task({ match }) {
     }, [LoadTaskDetails]);
 
     async function Save() {
+
         if (match.params.id) {
 
             await api.put(`/task/${match.params.id}`, {
@@ -125,7 +127,7 @@ function Task({ match }) {
                 </S.DateTime>
                 <S.Option>
                     <div>
-                        <input type="checkbox" checked={done} onChange={() => setDone(!done)} />
+                        <input type="checkbox" checked={done} onChange={() => setDone(!done)}  />
                         <span>CONCLUIDO</span>
 
                     </div>

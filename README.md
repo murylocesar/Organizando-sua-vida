@@ -85,7 +85,24 @@ npm install
 
 npm start
 ```
+## Execução do Mobile
+#### Na raiz do projeto Entre na pasta do Mobile:
+``` 
+cd ..
+```
+``` 
+cd Frontend
+```
+#### Instale as dependecias do Mobile
+```bash
 
+npm install
+```
+#### Execute a aplicação
+```bash
+
+npm start
+```
 💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
 
 ## Utilitários

@@ -42,20 +42,20 @@ function Header({ clickNotification }) {
                 {!isConnected ?
                     <Link to="/qrcode">SINCRONIZAR CELULAR</Link>
                     :
-                    <button type="button" onClick={Logout}>SAIR</button>
+                    <button type="button" onClick={Logout}>SAIR   </button>
                 }
-                {
+               {  
                     lateCount &&
                     <>
                         <span className="dividir" />
                         <button onClick={clickNotification} id="notification">
                             <img src={bell} alt="Notificação" />
-                            {lateCount > 0 &&
+                            {lateCount  &&
                                 <span>{lateCount}</span>
                             }
                         </button>
                     </>
-                }
+                } 
             </S.RightSide>
         </S.Container>
     )

@@ -22,10 +22,10 @@ export default function DateTimeInputAndroid({ type, save, date }) {
                 mode: 'calendar'
             });
 
-            if (action == DatePickerAndroid.dateSetAction)
+            if (action == DatePickerAndroid.dateSetAction) {
                 setDateTime(`${day} - ${month} - ${year}`);
-            save(format(new Date(year, month, day), 'yyy-MM-dd'));
-
+                save(format(new Date(year, month, day), 'yyy-MM-dd'));
+            }
         }
     }
 

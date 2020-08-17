@@ -30,7 +30,7 @@ export default function Task({ navigation }) {
 
     const [load, setLoad] = useState(false);
 
-    async function New() {
+    async function SaveTask() {
         if (!type) {
             return alert('Selecione o tipo da tarefas')
         }
@@ -47,17 +47,31 @@ export default function Task({ navigation }) {
             return alert('Digite a hora da tarefas')
         }
 
-        await api.post('/task', {
-            macaddress,
-            type,
-            title,
-            description,
-            when: `${date}T${hour}:00.000`
-        }).then(() => {
-            navigation.navigate('Home');
-        });
+        if (id) {
+            await api.put(`/task/${id}`, {
+                macaddress,
+                done,
+                type,
+                title,
+                description,
+                when: `${date}T${hour}:00.000`
+            }).then(() => {
+                navigation.navigate('Home');
+            });
+        } else {
+            await api.post('/task', {
+                macaddress,
+                type,
+                title,
+                description,
+                when: `${date}T${hour}:00.000`
+            }).then(() => {
+                navigation.navigate('Home');
+            });
+        }
 
     }
+
 
     async function loadTask() {
 
@@ -72,6 +86,26 @@ export default function Task({ navigation }) {
             setLoad(false);
         });
     }
+
+    async function RemoveTask() {
+        await api.delete(`/task/${id}`).then(() => {
+            navigation.navigate('Home');
+        });
+    }
+
+    async function Remove() {
+
+
+        alert('Remover tarefa',
+            'Deseja realmente remover essa tarefa?',
+            [
+                { text: 'Cancelar', },
+                { text: 'Confirmar', onPress: () => RemoveTask()}
+            ],
+            { cancelable: true }
+        )
+    }
+
     useEffect(() => {
         if (navigation.state.params) {
             setId(navigation.state.params.idTask);
@@ -127,7 +161,7 @@ export default function Task({ navigation }) {
                 </ScrollView>
             }
 
-            <Footer icon={'save'} onPress={New} />
+            <Footer icon={'save'} onPress={SaveTask} />
         </KeyboardAvoidingView >
     )
 }

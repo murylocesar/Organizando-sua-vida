@@ -17,16 +17,16 @@ export default function Home({ navigation }) {
     const [filter, setFilter] = useState('today');
     const [task, setTask] = useState([]);
     const [load, setLoad] = useState(false);
-    const [lateCount, setLateCount] = useState();
+    const [lateCount, setLateCount] = useState(0);
 
     const [macaddress, setMacaddress] = useState('0');
-    /* 
-        async function getMacAddress() {
-            await Network.getMacAddressAsync().then(mac => {
-                setMacaddress(mac);
-                
-            });
-        } */
+
+    async function getMacAddress() {
+        await Network.getMacAddressAsync().then(mac => {
+            setMacaddress(mac);
+
+        });
+    }
     async function loadTask() {
         setLoad(true);
 
@@ -65,7 +65,7 @@ export default function Home({ navigation }) {
             <Header
                 showNotification={true}
                 showBack={true}
-                pressNotification={Notification} late={lateCount}
+                pressNotification={Notification}
             />
             <View style={styles.filter}>
                 <TouchableOpacity onPress={() => setFilter('all')}>
@@ -126,7 +126,7 @@ export default function Home({ navigation }) {
                         task.map(t =>
                             (
                                 < TaskCard
-                                    one={false}
+                                    done={t.done}
                                     title={t.title}
                                     when={t.when}
                                     type={t.type}
