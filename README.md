@@ -20,7 +20,7 @@
 - [x] Criação de Protótipos Web
 - [X] Criação Web com ReactJs
 - [X] Criação de Protótipos Mobile 
-- [ ] Criação Mobile com React Native
+- [X] Criação Mobile com React Native
 
 <br>
 
