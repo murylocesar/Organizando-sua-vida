@@ -8,8 +8,6 @@ import bell from '../../assets/bell.png';
 import back from '../../assets/back.png';
 import qrcode from '../../assets/qrcode.png';
 
-import api from '../../services/api';
-import isConnected from '../../utils/isConnected';
 
 
 export default function Header({ showNotification, showBack, clickNotification, pressNotification, late, navigation }) {

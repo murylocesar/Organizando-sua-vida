@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image, TouchableOpacity, DatePickerAndroid, TimePickerAndroid, TextInput } from 'react-native';
 import styles from './styles';
 
 import iconClock from '../../assets/clock.png';
 import iconCalendar from '../../assets/calendar.png';
+import { format } from 'date-fns';
 
-export default function DateTimeInputAndroid({ type }) {
+export default function DateTimeInputAndroid({ type, save, date }) {
 
     const [DateTime, setDateTime] = useState();
+    useEffect(() => {
+        if (type == 'date' && date) {
+            setDateTime(format(new Date(date), 'dd/MM/yyyy'));
+            save(format(new Date(date), 'yyyy-MM-dd'));
+        }
+    }, [])
 
     async function selectDataOrHour() {
         if (type == 'date') {
@@ -16,22 +23,15 @@ export default function DateTimeInputAndroid({ type }) {
             });
 
             if (action == DatePickerAndroid.dateSetAction)
-                setDateTime(`${day} - ${month} - ${year}`)
+                setDateTime(`${day} - ${month} - ${year}`);
+            save(format(new Date(year, month, day), 'yyy-MM-dd'));
 
-        } else {
-            const { action, hour, minuto } = await DateTimePicker.open({
-                is24Hour: true
-            });
-
-            if (action !== DateTimePicker.dismissedAction) {
-                setDateTime(`${hour}:${minuto}`);
-            }
         }
     }
 
     return (
         <TouchableOpacity onPress={selectDataOrHour}>
-            <TextInput style={styles.input} placeholder={type == 'date' ? 'Clique aqui para definir a data' : 'Clique aqui para definir a hora'} editable={true} value={DateTime} />
+            <TextInput style={styles.input} placeholder={type == 'date' ? 'Clique aqui para definir a data' : 'Clique aqui para definir a hora'} editable={false} value={DateTime} />
             <Image style={styles.iconTextInput}
                 source={type == 'date' ? iconCalendar : iconClock} />
         </TouchableOpacity>

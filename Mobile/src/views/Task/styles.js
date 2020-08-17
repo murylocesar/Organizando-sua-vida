@@ -5,12 +5,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFF',
         alignItems: 'center',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        
     },
     ImageIcon: {
         width: 40,
         height: 40,
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        
     },
     label: {
         color: '#707070',
@@ -68,7 +70,19 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         fontSize: 16
 
+    },
+    typeIconInative: {
+        opacity: 0.5,
+    },
+    iconTextInput: {
+        position: 'absolute',
+        left: '90%',
+        top: 30,
+        width: 25,
+        height: 25,
+        resizeMode: 'contain'
     }
+
 
 });
 

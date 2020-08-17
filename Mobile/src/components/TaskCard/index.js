@@ -6,9 +6,9 @@ import styles from './styles.js';
 
 import typeIcon from '../../utils/typdeIcons';
 
-export default function TaskCard({ done, title, when,type }) {
+export default function TaskCard({ done, title, when, type, onPress }) {
     return (
-        <TouchableOpacity style={[styles.taskCard, done && styles.CardDone]}>
+        <TouchableOpacity style={[styles.taskCard, done && styles.CardDone]} onPress={onPress}>
             <View style={styles.cardLeft}>
                 <Image source={typeIcon[type]} style={styles.typeActive} className='Ok' />
                 <Text style={styles.cardTitle}>{title}</Text>

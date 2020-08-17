@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 
+import * as Network from 'expo-network';
 import styles from './styles';
 
 // componentes
@@ -10,6 +11,7 @@ import TaskCard from '../../components/TaskCard';
 
 import api from '../../services/api';
 
+
 export default function Home({ navigation }) {
 
     const [filter, setFilter] = useState('today');
@@ -17,17 +19,25 @@ export default function Home({ navigation }) {
     const [load, setLoad] = useState(false);
     const [lateCount, setLateCount] = useState();
 
+    const [macaddress, setMacaddress] = useState('0');
+    /* 
+        async function getMacAddress() {
+            await Network.getMacAddressAsync().then(mac => {
+                setMacaddress(mac);
+                
+            });
+        } */
     async function loadTask() {
         setLoad(true);
 
-        await api.get(`/task/filter/${filter}/00:00:00:00:00:01`).then(response => {
+        await api.get(`/task/filter/${filter}/${macaddress}`).then(response => {
             setTask(response.data)
             setLoad(false);
         });
     }
 
     async function lateVerifiy() {
-        await api.get(`/task/filter/late/00:00:00:00:00:01`).then(response => {
+        await api.get(`/task/filter/late/${macaddress}`).then(response => {
             setLateCount(response.data.length);
         });
     }
@@ -38,10 +48,16 @@ export default function Home({ navigation }) {
     function New() {
         navigation.navigate('Task');
     }
+    function Show(id) {
+        navigation.navigate('Task', { idTask: id });
+    }
+
     useEffect(() => {
+        /* getMacAddress().then(() => {
+        }); */
         loadTask();
         lateVerifiy();
-    }, [filter])
+    }, [filter, macaddress]);
 
     return (
 
@@ -109,7 +125,13 @@ export default function Home({ navigation }) {
                         :
                         task.map(t =>
                             (
-                                < TaskCard done={false} title={t.title} when={t.when} type={t.type} />
+                                < TaskCard
+                                    one={false}
+                                    title={t.title}
+                                    when={t.when}
+                                    type={t.type}
+                                    onPress={() => Show(t._id)}
+                                />
                             ))
                 }
 
