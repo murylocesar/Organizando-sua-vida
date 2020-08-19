@@ -91,7 +91,7 @@ npm start
 cd ..
 ```
 ``` 
-cd Frontend
+cd Mobile
 ```
 #### Instale as dependecias do Mobile
 ```bash
