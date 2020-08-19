@@ -20,7 +20,7 @@
 - [x] Criação de Protótipos Web
 - [X] Criação Web com ReactJs
 - [X] Criação de Protótipos Mobile 
-- [X] Criação Mobile com React Native
+- [ ] Criação Mobile com React Native
 
 <br>
 
@@ -108,3 +108,8 @@ npm start
 ## Utilitários
 - Protótipo: <a href="https://www.adobe.com/br/creativecloud.html?gclid=CjwKCAjwps75BRAcEiwAEiACMQaNyTkTu99zKKQsO2C1FGLsn74GYz3Ax446ScbB77QeeqST0WHu8RoC-f8QAvD_BwE&sdid=KQPOT&mv=search&ef_id=CjwKCAjwps75BRAcEiwAEiACMQaNyTkTu99zKKQsO2C1FGLsn74GYz3Ax446ScbB77QeeqST0WHu8RoC-f8QAvD_BwE:G:s&s_kwcid=AL!3085!3!301784432805!b!!g!!adobe!188193222!10039592982">Adobe XP</a>
 - Teste de API: <a href="https://insomnia.rest/">Insomnia</a>
+
+<br>
+
+### TELAS
+<img src="./desafio.gif"  />
