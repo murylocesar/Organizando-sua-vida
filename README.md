@@ -13,14 +13,14 @@
 
 <br>
 
-## Status do Projeto: Em desenvolvimento :warning:
-<!--Status do Projeto: Concluído :heavy_check_mark:-->
+## Status do Projeto: Concluído :heavy_check_mark:
+<!-- Status do Projeto: Em desenvolvimento :warning:-->
 
 - [x] Criação Backend e API com NodeJS
 - [x] Criação de Protótipos Web
 - [X] Criação Web com ReactJs
 - [X] Criação de Protótipos Mobile 
-- [ ] Criação Mobile com React Native
+- [X] Criação Mobile com React Native
 
 <br>
 
